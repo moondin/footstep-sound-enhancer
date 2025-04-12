@@ -41,16 +41,16 @@ class FootstepEnhancerGUI:
         self.style = ttk.Style()
         
         # Configure colors and styles
-        bg_color = "#f0f0f0"
+        self.bg_color = "#f0f0f0"
         accent_color = "#4a7eff"
         
-        self.master.configure(bg=bg_color)
+        self.master.configure(bg=self.bg_color)
         
-        self.style.configure("TFrame", background=bg_color)
+        self.style.configure("TFrame", background=self.bg_color)
         self.style.configure("TButton", background=accent_color, foreground="white", font=("Arial", 10, "bold"))
-        self.style.configure("TLabel", background=bg_color, font=("Arial", 10))
-        self.style.configure("Title.TLabel", background=bg_color, font=("Arial", 14, "bold"))
-        self.style.configure("Status.TLabel", background=bg_color, font=("Arial", 10, "bold"))
+        self.style.configure("TLabel", background=self.bg_color, font=("Arial", 10))
+        self.style.configure("Title.TLabel", background=self.bg_color, font=("Arial", 14, "bold"))
+        self.style.configure("Status.TLabel", background=self.bg_color, font=("Arial", 10, "bold"))
         
     def _create_widgets(self):
         """Create all the GUI widgets."""
@@ -83,7 +83,7 @@ class FootstepEnhancerGUI:
             footstep_frame, 
             width=20, 
             height=20, 
-            bg=bg_color,
+            bg=self.bg_color,
             highlightthickness=0
         )
         self.footstep_indicator.pack(side=tk.LEFT, padx=5)
