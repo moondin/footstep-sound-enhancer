@@ -3,11 +3,47 @@ Audio Processor Module for Footstep Sound Enhancer
 Handles real-time audio capture, analysis, and enhancement.
 """
 
-import pyaudio
 import numpy as np
 import threading
 import time
 from scipy import signal
+
+# Try to import PyAudio, with fallback mode if it fails
+PYAUDIO_AVAILABLE = False
+try:
+    import pyaudio
+    PYAUDIO_AVAILABLE = True
+except ImportError:
+    print("WARNING: PyAudio module not found. Running in limited functionality mode.")
+    # Create a dummy PyAudio class for compatibility
+    class PyAudioDummy:
+        def __init__(self):
+            self.paInt16 = 8  # Dummy value
+            
+        def open(self, **kwargs):
+            class DummyStream:
+                def __init__(self):
+                    pass
+                def start_stream(self):
+                    pass
+                def stop_stream(self):
+                    pass
+                def close(self):
+                    pass
+                def is_active(self):
+                    return False
+                def read(self, chunk_size, exception_on_overflow=False):
+                    # Return silent audio
+                    return b'\x00' * chunk_size * 4  # 2 bytes per sample * 2 channels
+                def write(self, data):
+                    pass
+            return DummyStream()
+            
+        def terminate(self):
+            pass
+    
+    # Use the dummy implementation if PyAudio isn't available
+    pyaudio = PyAudioDummy()
 
 class AudioProcessor:
     """Handles the audio capture, processing, and playback for footstep enhancement."""
@@ -19,7 +55,13 @@ class AudioProcessor:
         self.sample_rate = 44100  # Standard audio sample rate
         self.chunk_size = 1024    # Process audio in chunks
         self.channels = 2         # Stereo audio (most common)
-        self.audio_format = pyaudio.paInt16  # 16-bit integer audio
+        
+        # Handle different PyAudio implementations
+        try:
+            self.audio_format = pyaudio.paInt16  # 16-bit integer audio
+        except AttributeError:
+            # If using the dummy implementation
+            self.audio_format = getattr(pyaudio, 'paInt16', 8)  # Use 8 as fallback value
         
         # Audio enhancement parameters
         self.enhancement_factor = 2.0
@@ -96,7 +138,11 @@ class AudioProcessor:
             # Terminate PyAudio
             try:
                 self.p.terminate()
-                self.p = pyaudio.PyAudio()  # Reinitialize for next start
+                # Reinitialize more safely
+                try:
+                    self.p = pyaudio.PyAudio()
+                except Exception as e:
+                    print(f"Warning: Could not reinitialize PyAudio: {e}")
             except Exception as e:
                 print(f"Error terminating PyAudio: {e}")
                 

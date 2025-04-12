@@ -4,8 +4,11 @@ Provides the user interface for controlling the footstep sound enhancement.
 """
 
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import math
+
+# Import to check if we're in fallback mode
+from audio_processor import PYAUDIO_AVAILABLE
 
 class FootstepEnhancerGUI:
     """GUI class for the Footstep Sound Enhancer application."""
@@ -31,6 +34,18 @@ class FootstepEnhancerGUI:
         
         # Create the GUI elements
         self._create_widgets()
+        
+        # Show warning if PyAudio is not available
+        if not PYAUDIO_AVAILABLE:
+            messagebox.showwarning(
+                "Limited Functionality Mode",
+                "PyAudio module could not be loaded. Application will run in limited functionality mode "
+                "without actual audio processing capabilities.\n\n"
+                "To fix this issue, please make sure PyAudio is properly installed. "
+                "You can use pip to install it: 'pip install pyaudio'\n\n"
+                "If running the executable, please use one of the updated build scripts "
+                "with proper PyAudio dependencies included."
+            )
         
         # Set up periodic UI updates
         self.update_interval_ms = 50  # UI refresh rate in milliseconds
