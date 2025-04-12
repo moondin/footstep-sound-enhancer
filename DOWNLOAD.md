@@ -1,55 +1,53 @@
-# Download Footstep Sound Enhancer
+# Downloading and Building the Footstep Sound Enhancer
 
-There are two ways to get the Footstep Sound Enhancer application:
+## 🔍 Fixing PyAudio Import Issues
 
-## Option 1: Download the Pre-built Executable (Recommended)
+If you encounter a `ModuleNotFoundError: No module named 'pyaudio'` when running the executable, follow these instructions:
 
-The simplest way to get started is to download the ready-to-use executable file:
+### Option 1: Build with Hidden Imports
 
-1. Go to the [Releases](https://github.com/moondin/footstep-sound-enhancer/releases) page
-2. Find the latest release and download `FootstepSoundEnhancer.exe`
-3. Run the downloaded file to start the application - no installation needed!
+When building the executable, add the `--hidden-import` flags:
 
-### System Requirements
+```bash
+pyinstaller --name=FootstepSoundEnhancer --onefile --noconsole --clean --hidden-import=pyaudio --hidden-import=numpy --hidden-import=scipy --hidden-import=scipy.signal main.py
+```
 
-- Windows 7/8/10/11 (64-bit recommended)
-- Audio input and output devices
+### Option 2: Use the Updated Build Scripts
 
-## Option 2: Build from Source Code
+The repository has been updated with build scripts that include the necessary hidden imports:
 
-If you prefer to build the application yourself:
+- **Windows**: Run `build_exe.bat` or `build_with_spec.bat`
+- **Linux/Mac**: Run `build_exe.sh` or `build_with_spec.sh`
+- **Cross-platform**: Run `python build_exe.py`
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/moondin/footstep-sound-enhancer.git
-   ```
-   
-2. Install the required dependencies:
-   ```
-   pip install pyaudio numpy scipy pyinstaller
-   ```
-   
-3. Build the executable:
-   - Windows: Run `build_exe.bat` or `build_with_spec.bat`
-   - macOS/Linux: Run `./build_exe.sh` or `./build_with_spec.sh`
-   
-4. Find the executable in the `dist` folder
+### Option 3: Use the Spec File
 
-## Latest Version
+The `FootstepSoundEnhancer.spec` file has been updated to include the required modules. Build with:
 
-The current version is: **v1.0.0**
+```bash
+pyinstaller FootstepSoundEnhancer.spec
+```
 
-## Troubleshooting
+## 📥 Downloading the Pre-built Executable
 
-If you encounter issues when running the application:
+You can download the latest pre-built executable from the GitHub releases page:
 
-1. Make sure your audio devices are working properly
-2. Try running as Administrator (on Windows)
-3. Check the [User Guide](USER_GUIDE.md) for more detailed troubleshooting steps
-4. Report issues in the [GitHub Issues](https://github.com/moondin/footstep-sound-enhancer/issues) section
+[https://github.com/moondin/footstep-sound-enhancer/releases](https://github.com/moondin/footstep-sound-enhancer/releases)
 
-## Feedback and Support
+## 🔧 GitHub Actions Workflow Updates
 
-If you have questions or feedback, please:
-- Open an issue on GitHub
-- Contact support at [your-email@example.com]
+If you're using GitHub Actions to build the executable, make sure to update your workflow files. Add these hidden imports to your PyInstaller command:
+
+```yaml
+- name: Build executable
+  run: |
+    pyinstaller --name=FootstepSoundEnhancer --onefile --noconsole --clean --hidden-import=pyaudio --hidden-import=numpy --hidden-import=scipy --hidden-import=scipy.signal main.py
+```
+
+## ✅ Verifying the Fix
+
+To verify that the executable works correctly:
+
+1. Build the executable using one of the methods above
+2. Run the executable without requiring administrator privileges
+3. Confirm that it launches without any "module not found" errors
