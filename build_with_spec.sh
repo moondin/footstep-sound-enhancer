@@ -49,7 +49,7 @@ fi
 # Build the executable using the spec file
 echo
 echo "Building executable with PyInstaller using spec file..."
-python3 -m PyInstaller FootstepSoundEnhancer.spec
+python3 -m PyInstaller --hidden-import=pyaudio --hidden-import=numpy --hidden-import=scipy --hidden-import=scipy.signal FootstepSoundEnhancer.spec
 
 # Check if build was successful
 if [ ! -f "dist/FootstepSoundEnhancer" ]; then

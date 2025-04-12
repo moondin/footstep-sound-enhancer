@@ -103,7 +103,11 @@ def build_executable():
             "--name=FootstepSoundEnhancer",
             "--onefile",
             "--noconsole",
-            "--clean"
+            "--clean",
+            "--hidden-import=pyaudio",
+            "--hidden-import=numpy", 
+            "--hidden-import=scipy",
+            "--hidden-import=scipy.signal"
         ]
         
         if os.path.exists(icon_path):

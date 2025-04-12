@@ -50,7 +50,7 @@ if not exist "generated-icon.png" (
 REM Build the executable
 echo.
 echo Building executable with PyInstaller...
-pyinstaller --name=FootstepSoundEnhancer --onefile --noconsole --clean main.py
+pyinstaller --name=FootstepSoundEnhancer --onefile --noconsole --clean --hidden-import=pyaudio --hidden-import=numpy --hidden-import=scipy --hidden-import=scipy.signal main.py
 
 REM Check if build was successful
 if not exist "dist\FootstepSoundEnhancer.exe" (

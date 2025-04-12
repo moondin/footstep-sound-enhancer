@@ -49,7 +49,7 @@ fi
 # Build the executable
 echo
 echo "Building executable with PyInstaller..."
-python3 -m PyInstaller --name=FootstepSoundEnhancer --onefile --noconsole --clean main.py
+python3 -m PyInstaller --name=FootstepSoundEnhancer --onefile --noconsole --clean --hidden-import=pyaudio --hidden-import=numpy --hidden-import=scipy --hidden-import=scipy.signal main.py
 
 # Check if build was successful
 if [ ! -f "dist/FootstepSoundEnhancer" ]; then
