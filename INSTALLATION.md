@@ -1,85 +1,102 @@
 # Footstep Sound Enhancer - Installation Guide
 
-This guide will help you install and use the Footstep Sound Enhancer application.
+This guide provides step-by-step instructions for installing and setting up the Footstep Sound Enhancer application.
 
-## Download Options
+## Windows Installation (Recommended)
 
-### Option 1: Download the Pre-built Executable (Recommended for most users)
+### Prerequisites
 
-1. Download the `FootstepSoundEnhancer.exe` file from the latest release.
-2. Save it to a location on your computer where you'll remember it.
-3. Double-click the file to run the application.
-4. No installation is required - the application will start immediately.
+- Windows 7, 8, 10, or 11 (64-bit recommended)
+- Administrative privileges may be required
+- Working audio input and output devices
 
-### Option 2: Build from Source (For developers or advanced users)
+### Method 1: Using the Executable (Easiest)
 
-#### Prerequisites:
-- Python 3.6 or higher installed
-- Basic knowledge of command line operations
+1. Download the latest `FootstepSoundEnhancer.exe` from the [Releases](https://github.com/YOUR_USERNAME/footstep-sound-enhancer/releases) page
+2. Double-click the downloaded file to run it
+3. If Windows SmartScreen appears:
+   - Click "More info"
+   - Click "Run anyway"
+4. No installation is required - the application will start immediately
 
-#### Windows:
-1. Download or clone this repository to your computer.
-2. Open Command Prompt and navigate to the downloaded folder.
-3. Run the following commands:
-```
-pip install pyaudio numpy scipy pyinstaller
-build_exe.bat
-```
-4. After the build completes, find the executable in the `dist` folder.
+### Method 2: Building from Source Code
 
-#### macOS/Linux:
-1. Download or clone this repository to your computer.
-2. Open Terminal and navigate to the downloaded folder.
-3. Run the following commands:
-```
-pip install pyaudio numpy scipy pyinstaller
-chmod +x build_exe.sh
-./build_exe.sh
-```
-4. After the build completes, find the executable in the `dist` folder.
+If you prefer to build the application yourself:
 
-## Running the Application
+1. Install Python 3.9 or newer from [python.org](https://www.python.org/downloads/)
+   - Make sure to check the option "Add Python to PATH" during installation
 
-1. When you first run the application, you might see a security warning from your operating system.
-   - On Windows: Click "More info" and then "Run anyway".
-   - On macOS: Right-click the file, select "Open", and then click "Open" in the dialog.
+2. Install the required dependencies:
+   ```
+   pip install pyaudio numpy scipy pyinstaller
+   ```
+   
+   Note: PyAudio may require additional steps to install:
+   - Windows: `pip install pipwin` followed by `pipwin install pyaudio`
 
-2. The application will show a simple interface with these controls:
-   - **Start Enhancement**: Begin monitoring and enhancing footstep sounds.
-   - **Stop Enhancement**: Stop the audio processing.
-   - **Enhancement Factor**: Adjust how much the footstep sounds are amplified (1.0 to 5.0).
-   - **Detection Threshold**: Adjust how sensitive the footstep detection is (0.01 to 0.2).
+3. Clone or download this repository:
+   ```
+   git clone https://github.com/YOUR_USERNAME/footstep-sound-enhancer.git
+   ```
+   
+4. Navigate to the project directory:
+   ```
+   cd footstep-sound-enhancer
+   ```
+   
+5. Build the executable:
+   - Run the `build_exe.bat` script, or
+   - Run the command: `pyinstaller --name=FootstepSoundEnhancer --onefile --noconsole --clean main.py`
+   
+6. The executable will be created in the `dist` folder
 
-3. The application shows visual feedback:
-   - A green indicator light when a footstep is detected.
-   - An audio level meter showing the current sound level.
+## First-Time Setup
+
+1. When you first run the application, you may need to:
+   - Allow the application through your firewall
+   - Grant permissions to access audio devices
+   
+2. Configure your audio settings:
+   - Select the appropriate input device (your game audio source)
+   - Adjust the enhancement and threshold levels to your preference
+
+## Optional Configurations
+
+### Creating a Desktop Shortcut
+
+1. Right-click on `FootstepSoundEnhancer.exe` 
+2. Select "Create shortcut"
+3. Move the shortcut to your desktop
+
+### Running at Startup
+
+To have the application launch automatically when your computer starts:
+
+1. Press `Win+R` to open the Run dialog
+2. Type `shell:startup` and press Enter
+3. Copy a shortcut to the application into this folder
 
 ## Troubleshooting
 
-### Common Issues:
+### Common Issues
 
-1. **No sound enhancement**: 
-   - Make sure your system audio is working properly.
-   - Try increasing the Enhancement Factor.
-   - Try decreasing the Detection Threshold to make it more sensitive.
+1. **"Error accessing audio device"**
+   - Make sure your audio devices are properly connected
+   - Check if other applications are using the same audio device
+   - Try selecting a different audio device in the application settings
 
-2. **False positives (enhancing non-footstep sounds)**:
-   - Increase the Detection Threshold to make it less sensitive.
+2. **"DLL not found" error**
+   - Install the Visual C++ Redistributable for Visual Studio 2015-2019:
+     [Download from Microsoft](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 
-3. **Application won't start**:
-   - Make sure you have the necessary permissions to run applications.
-   - On Windows, try running as Administrator.
-   - On macOS, verify your security settings allow applications from identified developers.
+3. **Application appears unresponsive**
+   - Close other applications that might be using audio devices
+   - Restart your computer and try again
 
-### Windows-Specific Issues:
+### Getting Help
 
-If you get a "VCRUNTIME140.dll is missing" error, you need to install the Microsoft Visual C++ Redistributable:
-1. Download it from [Microsoft's website](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads).
-2. Install the package appropriate for your system (x86 for 32-bit, x64 for 64-bit Windows).
-3. Restart your computer if necessary.
+If you encounter issues not covered in this guide:
 
-## Uninstalling
-
-The Footstep Sound Enhancer does not modify your system or registry. To uninstall:
-1. Simply delete the executable file.
-2. Delete any shortcuts you may have created.
+1. Check the [User Guide](USER_GUIDE.md) for more detailed information
+2. Open an issue on the [GitHub repository](https://github.com/YOUR_USERNAME/footstep-sound-enhancer/issues)
+3. Contact support at [your-email@example.com]

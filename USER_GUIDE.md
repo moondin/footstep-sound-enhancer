@@ -1,125 +1,119 @@
 # Footstep Sound Enhancer - User Guide
 
-## Introduction
+This guide will help you get the most out of the Footstep Sound Enhancer application, which enhances footstep sounds in games for better awareness.
 
-Footstep Sound Enhancer is a desktop application designed to help gamers hear footstep sounds more clearly. It analyzes audio in real-time and selectively amplifies frequencies typically associated with footsteps, providing a competitive advantage in games where hearing enemy movement is important.
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Main Interface](#main-interface)
+3. [Audio Settings](#audio-settings)
+4. [Enhancing Footsteps](#enhancing-footsteps)
+5. [Advanced Settings](#advanced-settings)
+6. [Performance Tips](#performance-tips)
+7. [Troubleshooting](#troubleshooting)
 
 ## Getting Started
 
-### System Requirements
+1. Download and install the application by following the [Installation Guide](INSTALLATION.md)
+2. Launch the application (FootstepSoundEnhancer.exe)
+3. Set up your audio devices and preferences (see below)
 
-- Windows 7, 8, 10, or 11 (64-bit recommended)
-- macOS 10.13 or later
-- Audio input and output devices
+## Main Interface
 
-### Starting the Application
+The main window of the application includes:
 
-1. Double-click the `FootstepSoundEnhancer.exe` file (Windows) or `FootstepSoundEnhancer` file (macOS/Linux).
-2. The application will open with a simple interface showing controls and status information.
+- **Power Button**: Turns the enhancement on/off
+- **Enhancement Slider**: Controls how much the footstep sounds are amplified
+- **Threshold Slider**: Adjusts how sensitive the detection is
+- **Status Indicator**: Shows if the enhancer is currently active
+- **Audio Level Meter**: Displays the current audio input level
+- **Footstep Detection Indicator**: Lights up when footsteps are detected
 
-## User Interface Overview
+## Audio Settings
 
-![Application Interface](interface_diagram.png)
+For optimal performance:
 
-The interface consists of:
+1. **Select Input Device**: Choose the audio source where your game sound is playing
+   - This could be your default audio output, a virtual audio cable, or a specific device
 
-1. **Status Indicator**: Shows whether the enhancement is active or stopped.
-2. **Footstep Detection Indicator**: A circular light that turns green when footsteps are detected.
-3. **Audio Level Meter**: Shows the current audio level being analyzed.
-4. **Enhancement Controls**:
-   - **Enhancement Factor**: Controls how much footstep sounds are amplified.
-   - **Detection Threshold**: Controls the sensitivity of footstep detection.
-5. **Control Buttons**:
-   - **Start Enhancement**: Begins the audio analysis and enhancement.
-   - **Stop Enhancement**: Stops the audio processing.
-6. **Information Text**: Provides a brief explanation of the application's function.
+2. **Input Level**: Adjust your game volume so the audio level meter shows good activity
+   - Too low: The application might miss footstep sounds
+   - Too high: The audio might sound distorted when enhanced
 
-## Using the Application
+3. **Output Device**: By default, the enhanced audio goes to your default playback device
+   - For advanced setups, you can configure this in the settings menu
 
-### Basic Operation
+## Enhancing Footsteps
 
-1. Launch the application.
-2. Click the **Start Enhancement** button to begin analyzing audio.
-3. Play your game as normal. The application will automatically detect and enhance footstep sounds.
-4. When you're done, click the **Stop Enhancement** button.
+Follow these steps to get the best footstep enhancement:
 
-### Adjusting Settings
+1. **Start a Game**: Launch your game and go to an area with footstep sounds
+2. **Turn On Enhancement**: Click the power button to activate enhancement
+3. **Adjust Enhancement Level**:
+   - Start at a lower level (around 30%)
+   - Gradually increase until footsteps are clearly audible but not overwhelming
+   - Recommended range: 30-70% (higher values might cause distortion)
+4. **Set Threshold**:
+   - Higher threshold: Only stronger footstep sounds are enhanced (fewer false positives)
+   - Lower threshold: More sensitive detection (might enhance unwanted sounds)
+   - Find the right balance for your game and environment
 
-#### Enhancement Factor (1.0 - 5.0)
+## Advanced Settings
 
-This controls how much the detected footstep sounds are amplified:
-- **1.0**: No enhancement (original volume)
-- **2.0**: Default setting (double volume)
-- **3.0 - 5.0**: Higher enhancement (useful for very quiet footsteps)
+Access advanced settings by clicking the gear icon:
 
-Recommendation: Start with the default 2.0 setting and adjust as needed. Higher values may cause distortion.
+- **Frequency Range**: Fine-tune the frequency range for footstep detection
+  - Lower range (50-300 Hz): Better for heavy footsteps, explosions
+  - Mid range (300-800 Hz): Optimal for most footsteps
+  - Higher range (800-2000 Hz): Better for light footsteps, stealth movement
+  
+- **Processing Mode**:
+  - Balance: Standard processing (recommended)
+  - Performance: Lower CPU usage but less precise
+  - Quality: Higher precision but more CPU intensive
 
-#### Detection Threshold (0.01 - 0.2)
+## Performance Tips
 
-This controls how sensitive the footstep detection is:
-- **Lower values** (0.01 - 0.05): More sensitive, may detect more footsteps but also more false positives
-- **Higher values** (0.1 - 0.2): Less sensitive, fewer false positives but might miss quiet footsteps
+To get the best experience:
 
-Recommendation: Start with the default 0.05 setting and adjust based on your game and audio setup.
-
-### Visual Feedback
-
-- **Footstep Indicator**: Turns green when potential footstep sounds are detected.
-- **Audio Level Meter**: Shows the current audio level in the footstep frequency range.
-  - Green/Yellow: Normal levels
-  - Red: High volume levels
-
-## Optimal Setup for Gaming
-
-### Game Audio Settings
-
-For best results:
-1. In your game settings, set audio to stereo (not surround).
-2. Reduce music volume and increase sound effects volume.
-3. If available, enable "footstep sounds" or similar options in the game settings.
-
-### Physical Setup
-
-1. Use headphones for best directional audio perception.
-2. Ensure your microphone (if any) won't pick up sounds from your speakers to prevent feedback loops.
+1. **Close unnecessary applications** to free up CPU resources
+2. **Use headphones** for better directional audio
+3. **Adjust game audio mix** to reduce music and increase effect volume
+4. If you experience audio lag, try:
+   - Lowering the enhancement level
+   - Switching to Performance mode
+   - Reducing other audio processes running on your system
 
 ## Troubleshooting
 
 ### Common Issues
 
-#### No Enhancement Effect
+1. **No sound enhancement**:
+   - Check if the power button is on (glowing)
+   - Make sure the enhancement level is set high enough
+   - Verify your audio devices are correctly selected
+   - Try increasing the threshold sensitivity
 
-- Check if the status shows "Running"
-- Try increasing the Enhancement Factor
-- Try lowering the Detection Threshold
+2. **Distorted sound**:
+   - Lower the enhancement level
+   - Reduce your game volume
+   - Check for conflicting audio software
 
-#### False Positives (Too Many Sounds Enhanced)
+3. **High CPU usage**:
+   - Switch to Performance mode
+   - Close other CPU-intensive applications
+   - Update your audio drivers
 
-- Increase the Detection Threshold
-- Reduce the Enhancement Factor
+4. **Application doesn't start**:
+   - Make sure you have the required Visual C++ Redistributable installed
+   - Run as administrator
+   - Check if your antivirus is blocking the application
 
-#### Application Not Starting
+### Getting Help
 
-- Make sure your system meets the requirements
-- Check if you have the necessary permissions to run applications
-- Windows: Try running as Administrator
+If you encounter issues not covered in this guide:
 
-#### Audio Distortion
-
-- Lower the Enhancement Factor
-- Make sure your system volume is not too high
-
-### Error Messages
-
-- **"Audio stream error"**: Check your audio devices and ensure no other application has exclusive access to your audio.
-- **"Failed to initialize audio"**: Restart the application or your computer.
-
-## Support
-
-If you encounter issues not covered in this guide, please:
-1. Check the README file for additional information
-2. Contact support at [support@footstepenhancer.com](mailto:support@footstepenhancer.com)
-
-## Legal Considerations
-
-This application does not modify game files or memory. It only processes audio output from your system. However, be aware that some games' terms of service may prohibit the use of third-party software that provides gameplay advantages. Use at your own risk.
+1. Check the [Installation Guide](INSTALLATION.md) for system requirements
+2. Visit our [GitHub repository](https://github.com/YOUR_USERNAME/footstep-sound-enhancer) for updates
+3. Open an issue on GitHub to report bugs or request features
+4. Contact support at [your-email@example.com]

@@ -1,0 +1,31 @@
+# PyInstaller build directories
+build/
+dist/
+__pycache__/
+*.py[cod]
+*$py.class
+*.spec
+!FootstepSoundEnhancer.spec
+
+# Python virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
