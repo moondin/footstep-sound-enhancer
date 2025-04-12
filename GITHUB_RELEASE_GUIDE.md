@@ -32,9 +32,9 @@ This guide will walk you through the process of making the Footstep Sound Enhanc
    ```
 5. Add the GitHub repository as a remote:
    ```
-   git remote add origin https://github.com/YOUR_USERNAME/footstep-sound-enhancer.git
+   git remote add origin https://github.com/moondin/footstep-sound-enhancer.git
    ```
-   (Replace YOUR_USERNAME with your actual GitHub username)
+   (Replace moondin with your actual GitHub username)
 6. Push the code to GitHub:
    ```
    git push -u origin main
@@ -85,7 +85,7 @@ After creating the release, you can get a direct link to the executable:
 3. Share this link with users who want to download your application
 
 The link will look something like:
-`https://github.com/YOUR_USERNAME/footstep-sound-enhancer/releases/download/v1.0.0/FootstepSoundEnhancer.exe`
+`https://github.com/moondin/footstep-sound-enhancer/releases/download/v1.0.0/FootstepSoundEnhancer.exe`
 
 ## Updating the Application
 

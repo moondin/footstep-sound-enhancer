@@ -12,7 +12,7 @@ This guide provides step-by-step instructions for installing and setting up the 
 
 ### Method 1: Using the Executable (Easiest)
 
-1. Download the latest `FootstepSoundEnhancer.exe` from the [Releases](https://github.com/YOUR_USERNAME/footstep-sound-enhancer/releases) page
+1. Download the latest `FootstepSoundEnhancer.exe` from the [Releases](https://github.com/moondin/footstep-sound-enhancer/releases) page
 2. Double-click the downloaded file to run it
 3. If Windows SmartScreen appears:
    - Click "More info"
@@ -36,7 +36,7 @@ If you prefer to build the application yourself:
 
 3. Clone or download this repository:
    ```
-   git clone https://github.com/YOUR_USERNAME/footstep-sound-enhancer.git
+   git clone https://github.com/moondin/footstep-sound-enhancer.git
    ```
    
 4. Navigate to the project directory:
@@ -98,5 +98,5 @@ To have the application launch automatically when your computer starts:
 If you encounter issues not covered in this guide:
 
 1. Check the [User Guide](USER_GUIDE.md) for more detailed information
-2. Open an issue on the [GitHub repository](https://github.com/YOUR_USERNAME/footstep-sound-enhancer/issues)
+2. Open an issue on the [GitHub repository](https://github.com/moondin/footstep-sound-enhancer/issues)
 3. Contact support at [your-email@example.com]

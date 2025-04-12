@@ -114,6 +114,6 @@ To get the best experience:
 If you encounter issues not covered in this guide:
 
 1. Check the [Installation Guide](INSTALLATION.md) for system requirements
-2. Visit our [GitHub repository](https://github.com/YOUR_USERNAME/footstep-sound-enhancer) for updates
+2. Visit our [GitHub repository](https://github.com/moondin/footstep-sound-enhancer) for updates
 3. Open an issue on GitHub to report bugs or request features
 4. Contact support at [your-email@example.com]

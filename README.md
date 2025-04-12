@@ -1,6 +1,6 @@
 # Footstep Sound Enhancer
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/YOUR_USERNAME/footstep-sound-enhancer)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/moondin/footstep-sound-enhancer)
 ![Platform](https://img.shields.io/badge/platform-Windows-blue)
 ![Python](https://img.shields.io/badge/python-3.9+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -31,13 +31,13 @@ Gaming is all about gaining a competitive edge, and in first-person shooters and
 
 ## Download
 
-**[Download the latest release](https://github.com/YOUR_USERNAME/footstep-sound-enhancer/releases/latest)**
+**[Download the latest release](https://github.com/moondin/footstep-sound-enhancer/releases/latest)**
 
 For detailed download and installation instructions, see the [Download Guide](DOWNLOAD.md).
 
 ## Quick Start
 
-1. Download the .exe file from the [Releases](https://github.com/YOUR_USERNAME/footstep-sound-enhancer/releases) page
+1. Download the .exe file from the [Releases](https://github.com/moondin/footstep-sound-enhancer/releases) page
 2. Run the application
 3. Start your game
 4. Use the sliders to adjust the enhancement level and detection threshold
